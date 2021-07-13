@@ -1,20 +1,41 @@
-@use './main';
+@use './global';
 
 .button {
+  background-color: global.$color-secondary-dark;
   border: none;
   border-radius: 10px;
-  background-color: main.$color-secondary-dark;
-  color: main.$color-neutral-light;
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 14px;
-  font-weight: 700;
+  color: global.$color-neutral-light;
   cursor: pointer;
+  font-family: inherit;
+  font-size: 1em;
+  font-weight: 700;
+  overflow: hidden;
   padding: 10px 20px;
+  position: relative;
+  transition: background-color 250ms, box-shadow 250ms;
+
+  &:before {
+    background: global.$color-neutral-light;
+    content: '';
+    height: 150px;
+    left: -50px;
+    opacity: 0.2;
+    position: absolute;
+    top: -50px;
+    transform: rotate(30deg);
+    transition: left 500ms ease;
+    width: 30px;
+  }
 }
 
 .button:hover {
-  background-color: main.$color-secondary;
-  box-shadow: 0px 5px 10px 0px rgba(black, 0.2);
+  background-color: global.$color-secondary;
+  box-shadow: rgba(global.$color-neutral-dark, 0.15) 0px 10px 20px,
+    rgba(global.$color-neutral-dark, 0.2) 0px 8px 8px;
+
+  &:before {
+    left: 120%;
+  }
 }
 
 .button--rounded {
@@ -22,12 +43,16 @@
 }
 
 .button--white {
-  background-color: main.$color-neutral-light;
-  color: main.$color-secondary-dark;
+  background-color: global.$color-neutral-light;
+  color: global.$color-secondary-dark;
+
+  &:before {
+    background: global.$color-primary-light;
+    opacity: 0.15;
+  }
 }
 
 .button--white:hover {
-  background-color: main.$color-neutral-light;
-  box-shadow: 0px 5px 10px 0px rgba(black, 0.2);
-  color: main.$color-secondary;
+  background-color: global.$color-neutral-light;
+  color: global.$color-secondary;
 }
