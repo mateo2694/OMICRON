@@ -13,6 +13,7 @@
   padding: 10px 20px;
   position: relative;
   transition: background-color 250ms, box-shadow 250ms;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 
   &:before {
     background: global.$color-neutral-light;
@@ -47,8 +48,8 @@
   color: global.$color-secondary-dark;
 
   &:before {
-    background: global.$color-primary-light;
-    opacity: 0.15;
+    background: global.$color-secondary;
+    opacity: 0.1;
   }
 }
 

@@ -11,6 +11,7 @@
   padding: 10px 20px;
   position: relative;
   transition: background-color 250ms, box-shadow 250ms;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 .button:before {
   background: white;
@@ -42,8 +43,8 @@
   color: #8c47cc;
 }
 .button--white:before {
-  background: #2ee6d7;
-  opacity: 0.15;
+  background: #9845e6;
+  opacity: 0.1;
 }
 
 .button--white:hover {
